@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>مريم ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@700&display=swap" rel="stylesheet">
+
+<style>
+body{
+  margin:0;
+  padding:0;
+  text-align:center;
+  background:linear-gradient(to bottom,#ff758c,#ff7eb3);
+  font-family:Arial;
+  overflow:hidden;
+  color:white;
+}
+
+#name{
+  font-family:'Aref Ruqaa', serif;
+  font-size:80px;
+  margin-top:120px;
+  letter-spacing:5px;
+  text-shadow:0 0 20px rgba(255,255,255,0.8);
+  min-height:100px;
+}
+
+.glow{
+  animation:glow 1.5s infinite alternate;
+}
+
+@keyframes glow{
+  from{text-shadow:0 0 10px white;}
+  to{text-shadow:0 0 30px white,0 0 60px pink;}
+}
+
+#counter{
+  font-size:22px;
+  margin:20px;
+}
+
+button{
+  padding:15px 30px;
+  font-size:18px;
+  border:none;
+  border-radius:30px;
+  cursor:pointer;
+  background:#ff2e63;
+  color:white;
+  box-shadow:0 0 25px rgba(255,0,90,0.9);
+  transition:0.3s;
+}
+
+button:hover{
+  transform:scale(1.1);
+}
+
+.heart{
+  position:fixed;
+  top:-10px;
+  color:white;
+  font-size:20px;
+  animation:fall linear infinite;
+}
+
+@keyframes fall{
+  to{transform:translateY(100vh);}
+}
+
+.fadeIn{
+  animation:fade 1.5s ease forwards;
+}
+
+@keyframes fade{
+  from{opacity:0; transform:scale(0.8);}
+  to{opacity:1; transform:scale(1);}
+}
+
+.shake{
+  animation:shake 0.5s;
+}
+
+@keyframes shake{
+  0%{transform:translateX(0);}
+  25%{transform:translateX(-5px);}
+  50%{transform:translateX(5px);}
+  75%{transform:translateX(-5px);}
+  100%{transform:translateX(0);}
+}
+
+.explode{
+  position:fixed;
+  font-size:25px;
+  animation:boom 1s ease-out forwards;
+}
+
+@keyframes boom{
+  to{
+    transform:translateY(300px) scale(1.5);
+    opacity:0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div id="name" class="glow"></div>
+
+<h2>حبنا مستمر ❤️</h2>
+<div id="counter"></div>
+
+<button onclick="openLove()">افتحي الرسالة يا مريم 💌</button>
+
+<audio autoplay loop>
+  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_8b4a0b7c1f.mp3?filename=romantic-ambient-piano-110624.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+// ✨ كتابة الاسم حرف حرف
+const text = "مريم";
+let i = 0;
+function typeWriter(){
+  if(i < text.length){
+    document.getElementById("name").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typeWriter,300);
+  }
+}
+typeWriter();
+
+
+// ❤️ عداد من 15/1/2025
+const loveDate = new Date("2025-01-15T00:00:00");
+
+function updateCounter(){
+  const now = new Date();
+  const diff = now - loveDate;
+
+  const days = Math.floor(diff/(1000*60*60*24));
+  const hours = Math.floor(diff/(1000*60*60))%24;
+  const minutes = Math.floor(diff/(1000*60))%60;
+  const seconds = Math.floor(diff/1000)%60;
+
+  document.getElementById("counter").innerHTML =
+  `عدى على معرفتنا: ${days} يوم ${hours} ساعة ${minutes} دقيقة ${seconds} ثانية ❤️`;
+}
+setInterval(updateCounter,1000);
+
+
+// 💣 انفجار قلوب
+function explodeHearts(){
+  for(let i=0;i<40;i++){
+    const heart = document.createElement("div");
+    heart.classList.add("explode");
+    heart.innerHTML="💖";
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.top="40vh";
+    document.body.appendChild(heart);
+    setTimeout(()=>{heart.remove();},1000);
+  }
+}
+
+
+// 💌 المفاجأة الكبرى
+function openLove(){
+
+  document.body.classList.add("shake");
+
+  setTimeout(()=>{
+    explodeHearts();
+
+    document.body.innerHTML = `
+    <div class="fadeIn">
+    <h1 style="margin-top:150px;font-family:'Aref Ruqaa';font-size:70px;">
+    مريم ❤️
+    </h1>
+    <p style="font-size:18px;line-height:1.6;padding:20px;">
+    انا بقيت بدمنك بجد عارفه مدمن المخدرات؟ لا انا مدمن لحبك وليكي ولعيونك اللى كل متحصل حاجه وحشه ليا بدخل ابصلها واتوه والله ربنا يعلم انا بحبك قد اى وبحبك ازاى بقيت اصحى الصبح امسك الفون وابص لصورتك ومش متخيل بجد انك معايا ولا بتحبيني كل يوم حبى ليكي بيزيد اضغاففف كتير اوى وبقيت بحلم بيكي وعمرها محصلت مع بنت وبقيت بسهر وبكلمك بالساعات عارف انك ساعات كدا بيجيلك تفكير انى مش بحبك او بلعب بيكي بس العب بيكي ازاى واسيب الجمال ده والعيون والضحكه الحلوه دي تروح لغيري وغيري يكون بيبصلها انا عمري مهقبل مخلوق يبصلك علشان انتى ليا وانا ليكي لحد اخر يوم فى عمرنا احنا سوا ان شاء الله وغصب عن اى حد والله وبكره اجى اخدك من اهلك وتبقي بتاعتى رسمي وعمري م هخلى حد يشمت فيكي لو لحظه بس وهخليكي تغظيهم وانتى فى بيتنا ولابسه دبلتى انتى والله مش انسانه عاديه انتى نجمه ونزلت على الارض بالغلط مش حاسه بقيمه نفسك بس بجد انتى غاليه اوى واغلى مما تتصوري كمان انتى احسن انسانه شافتها عيونى بقولك والله العظيم مشوفت بنت احلى منك بقيت مبحبش ابص لبنات انتى ماليه عيني وقلبي وروحي انتى الكلام خلص فيكي خلاص لو وصفتك مش هوفيلك ربع حقك انتى ملاك ونازل على الارض عايزك دايما مبسوطه متخليش حد يعكننك او يخلى الضحكه القمر تفارق وشك فرحه بسيطه منك هتعيشني مليون سنه مبسوط بجد ومش ببالغ بحبك لما تشاركيني حجاتك بقيت بحس ب امان معاكى وعمري محسيتو مع حد والله وراحه وحب وطمانينه ودفا كدا بجد مكفيانى من كل النواحى اسيبك بعد كل ده واروح لغيرك وعد وعد وعد عمري معملها الا لو كنت داخل قبري وبقيت بدعى ربنا يطول فى عمري علشان عايز اعيشو معاكى لسه مشبعتش منك ولا هشبع انتى مريومتي امى واختى وصحبتى وبنتى وحبيبتي ومراتى وخطيبتي ودنيتى وقمري وقلبي وحياتى وعمري وروحي وبجد دى اجمل سنه فى حياتى بالنسبه ليا اول سنه نبقا مع بعض فيها مش هقدر انساها وحابب اقولك انى مش ندمان انى دخلتك حياتى ولا هندم انى اختارتك شريكه حياتي مش ندمان انى حبيتك ولا انى دخلتك حياتى بالعكس فخور اوى بختياري ده ودايما فخور ب اى حاجه بتعمليها حتى لو كانت صغيره خالص ومهما قولت كلام مش هيوصف حبي ليكي مبسوط اوى اوى اوى بجد اننا الحمدلله مش بنتخانق ولا نزعل من بعض ووقت مهيحصل كدا بنقلب الموضوع هزار علشان مش هنقدر نبعد عن بعض لو دقيقه واحده انتى سندى فى الدنيا انتى حته منى ونصي التانى وعوضى عن كل اللى راح ونعمه من عند ربنا نزلها عليا مش عارف انا عملت اى علشان تبقا بالحلاوه دى بس ربنا كريم والحمدلله جابك لياا انتى جنتى وسعادتى وضحكتى انتى اهلى وناسي الدنيا دى متسواش حاجه مقابل انك تكونى جنبي طول العمر والعمر كلو ومعاكى الف خناقه ولا ضحكه مع غيرك ربنا يخليكي ليا وميحرمنيش منك ابدا وربنا يحفظك ليا وتكونى من نصيبي بحبككككك اووووووييي مريومتي
+    </p>
+    </div>
+    `;
+
+    document.body.style.background="black";
+
+  },400);
+}
+
+
+// ❤️ قلوب نازلة مستمرة
+function createHeart(){
+  const heart = document.createElement("div");
+  heart.classList.add("heart");
+  heart.innerHTML="❤️";
+  heart.style.left=Math.random()*100+"vw";
+  heart.style.animationDuration=(Math.random()*3+2)+"s";
+  document.body.appendChild(heart);
+  setTimeout(()=>{heart.remove();},5000);
+}
+setInterval(createHeart,300);
+
+</script>
+
+</body>
+  </html>
